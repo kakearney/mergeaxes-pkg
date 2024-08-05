@@ -14,7 +14,8 @@ function newax = mergeaxes(ax)
 
 % Copyright 2013 Kelly Kearney
 
-pos = arrayfun(@(x) getpos(x, 'nz'), ax, 'uni', 0);
+set(ax, 'units', 'normalized');
+pos = get(ax, 'position');
 pos = cat(1, pos{:});
 
 l = min(pos(:,1));
