@@ -3,6 +3,9 @@ function newax = mergeaxes(ax)
 %
 % newax = mergeaxes(ax)
 %
+% This function creates a new axis that occupies the bounding box of the
+% input axes and deletes the input axes.
+%
 % Input variables:
 %
 %   ax:     array of axis handles.  These objects will be deleted.
