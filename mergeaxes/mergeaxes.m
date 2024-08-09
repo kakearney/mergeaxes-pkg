@@ -3,6 +3,9 @@ function newax = mergeaxes(ax)
 %
 % newax = mergeaxes(ax)
 %
+% This function creates a new axis that occupies the bounding box of the
+% input axes and deletes the input axes.
+%
 % Input variables:
 %
 %   ax:     array of axis handles.  These objects will be deleted.
@@ -14,7 +17,8 @@ function newax = mergeaxes(ax)
 
 % Copyright 2013 Kelly Kearney
 
-pos = arrayfun(@(x) getpos(x, 'nz'), ax, 'uni', 0);
+set(ax, 'units', 'normalized');
+pos = get(ax, 'position');
 pos = cat(1, pos{:});
 
 l = min(pos(:,1));
